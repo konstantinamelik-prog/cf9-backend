@@ -6,4 +6,4 @@ const router = Router();
 // router.get('/email/:email', userCtrl.getOneByEmail);
 router.post('/', userCtrl.create);
 
-// export default router;
+export default router;

@@ -8,8 +8,10 @@ import { Types } from 'mongoose';
 // export const SALT_ROUNDS = parseInt(process.env.SALT_ROUNDS || '10');
 
 export const createUser = async(payload:IUser) => {
-  console.log(payload);
-  return payload;
+  console.log("Service Payload", payload);
+  const user = new User(payload);
+  console.log("New user: ", user);
+  return user;
   }
 
 // export const createUser = async(payload:CreateUserDTO) => {
