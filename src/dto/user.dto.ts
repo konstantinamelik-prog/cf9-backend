@@ -28,7 +28,7 @@ export interface UpdateUserDTO {
   password: string;
   firstname?: string;
   lastname?: string;
-//   email?: string; είναι unique δεν γίνεται update
+  email?: string;
   address?: {
     area?: string;
     street?: string;

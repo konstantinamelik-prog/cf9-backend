@@ -23,3 +23,16 @@ export const create = async(req:Request, res:Response, next: NextFunction) => {
     next(err)
   }
 }
+
+export const update = async(req: Request, res: Response, next: NextFunction) => {
+  try{
+    const username: string =  req.params.username;
+    const data: UpdateUserDTO = req.body;
+    const result = await userService.updateUser(username, data);
+    if (!result)
+      return res.status(401).json({message: "User not found"})
+    res.status(200).json(result);
+  } catch (err) {
+    next(err)
+  } 
+}
