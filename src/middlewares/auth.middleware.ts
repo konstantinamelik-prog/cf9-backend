@@ -15,9 +15,9 @@ export const authenticate = (req: Request, res: Response, next: NextFunction) =>
   if (!header || !header.startsWith('Bearer ')) {
     return res.status(401).json({message: "Missing or invalid Authorization header"});
   }
-  console.log(header);
+  // console.log(header);
   const token = header.split(' ')[1];
-  console.log(token);
+  // console.log(token);
 
   if (!token) {
     return res.status(401).json({message: "Invalid Authorization format"});
@@ -25,9 +25,9 @@ export const authenticate = (req: Request, res: Response, next: NextFunction) =>
 
   try {
     const payload = jwt.verify(token, JWT_SECRET);
-    console.log(payload);
-    // req.user = payload;
-    // console.log("REQ USER>>>", req.user);
+    // console.log(payload);
+    req.user = payload;
+    console.log("REQ USER>>>", req.user);
     next()
   } catch (err) {
     res.status(401).json({message: "Invalid or expired token"});
