@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
-import {IRole} from '../models/role.model'
+import { IRole } from '../models/role.model'
 
 export const hasReaderRole = (req:Request, res: Response, next: NextFunction ) => {
   try {
