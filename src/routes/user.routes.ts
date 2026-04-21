@@ -46,8 +46,8 @@ router.get('/email/:email', userCtrl.getOneByEmail);
  *  post:
  *    summary: Creates a user
  *    tags: [Users]
-//  *    security:
-//  *      - bearerAuth: []
+ *    security:
+ *      - bearerAuth: []
  *    requestBody:
  *      required: true
  *      content:
