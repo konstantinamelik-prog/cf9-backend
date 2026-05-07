@@ -34,7 +34,7 @@ export const googleLogin = async(idToken: string) =>{
     if (!user){
       // We must create GoogleUser model not User 
       // user = new GoogleUser({
-      //   username: googleUser.email;
+      //   username: googleUser.email,
       //   email: googleUser.email,
       //   name: googleUser.name,
       //   photoUrl: googleUser.picture
